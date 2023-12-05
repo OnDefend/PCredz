@@ -32,4 +32,4 @@ COPY Pcredz /opt/Pcredz/
 COPY logs /opt/Pcredz/logs
 
 WORKDIR /opt/Pcredz/
-ENTRYPOINT [ "Pcredz" ]
+ENTRYPOINT [ "/opt/Pcredz/Pcredz" ]
