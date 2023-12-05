@@ -23,7 +23,6 @@ RUN python -m pip install python-libpcap
 
 # Change our shell to /bin/bash
 RUN sed -i '/root/s/ash/bash/g' /etc/passwd
-CMD ["/bin/bash"]
 
 # Make directory
 RUN mkdir /opt/Pcredz
@@ -33,3 +32,4 @@ COPY Pcredz /opt/Pcredz/
 COPY logs /opt/Pcredz/logs
 
 WORKDIR /opt/Pcredz/
+ENTRYPOINT [ "Pcredz" ]
