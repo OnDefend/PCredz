@@ -29,9 +29,9 @@ Build the container
 docker build . -t pcredz
 ```
 
-Then use the command below to map the current working directory inside the Pcredz container. This is useful for moving .pcap files to parse or for retrieving log files from a live capture.
+Then use the command below to map the current working directory inside the Pcredz container log directory. This is useful for moving .pcap files to parse or for retrieving log files from a live capture.
 ```bash
-docker run --net=host -v $(pwd):/opt/Pcredz -it pcredz
+docker run --net=host -v $(pwd):/opt/Pcredz/logs -it pcredz
 ```
 
 OR
