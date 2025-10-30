@@ -1,12 +1,13 @@
 # syntax=docker/dockerfile:1
-#FROM debian:buster-slim
-FROM python:3.7.15-slim-bullseye
+#FROM debian:bullseye-slim
+FROM python:3.9.23-slim-bullseye
 
 # Install apt packages
 RUN apt update
 RUN apt install python3 \
     python3-pip \
     libpcap-dev \
+    file \
     nano \
     iproute2 \
     git \
@@ -23,6 +24,7 @@ RUN python -m pip install python-libpcap
 
 # Change our shell to /bin/bash
 RUN sed -i '/root/s/ash/bash/g' /etc/passwd
+CMD ["/bin/bash"]
 
 # Make directory
 RUN mkdir /opt/Pcredz
